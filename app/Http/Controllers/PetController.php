@@ -15,18 +15,9 @@ class PetController extends Controller
      */
     public function index()
     {
-        //
+        return Pet::all();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,7 +27,7 @@ class PetController extends Controller
      */
     public function store(StorePetRequest $request)
     {
-        //
+        return Pet::create($request->validated());
     }
 
     /**
@@ -47,19 +38,9 @@ class PetController extends Controller
      */
     public function show(Pet $pet)
     {
-        //
+        return $pet;
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Pet  $pet
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Pet $pet)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -70,7 +51,8 @@ class PetController extends Controller
      */
     public function update(UpdatePetRequest $request, Pet $pet)
     {
-        //
+        $pet->update($request->validated());
+        return $pet;
     }
 
     /**
@@ -81,6 +63,7 @@ class PetController extends Controller
      */
     public function destroy(Pet $pet)
     {
-        //
+        $pet->delete();
+        return response()->json(null,204);
     }
 }

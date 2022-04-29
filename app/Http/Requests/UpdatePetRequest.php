@@ -13,7 +13,7 @@ class UpdatePetRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdatePetRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'sometimes|required',
+            'species'=>'sometimes|required',
+            'birth-date'=>'sometimes|required|date|before:now',
+            'death-date'=>'sometimes|date|after:birth-date',
+            'note'=>'sometimes',
         ];
     }
 }

@@ -17,7 +17,11 @@ class PetFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name'=>$this->faker->name(),
+            'species'=>$this->faker->sentence(),
+            'birth-date'=>$this->faker->date(),
+            'death-date'=>$this->faker->date(),
+            'note'=>$this->faker->sentence()
         ];
     }
 }
