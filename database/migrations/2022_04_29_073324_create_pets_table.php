@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name',255);
             $table->string('species',255);
-            $table->date('birth-date');
-            $table->date('death-date')->nullable()->default(null);
+            $table->date('birth_date');
+            $table->date('death_date')->nullable()->default(null);
             $table->text('note')->nullable();
             $table->timestamps();
         });

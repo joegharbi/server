@@ -26,8 +26,8 @@ class StorePetRequest extends FormRequest
         return [
             'name'=>'required',
             'species'=>'required',
-            'birth-date'=>'required|date|before:now',
-            'death-date'=>'nullable|date|after:birth-date',
+            'birth_date'=>'required|date',
+            'death_date'=>'nullable|date',
             'note'=>'nullable',
         ];
     }

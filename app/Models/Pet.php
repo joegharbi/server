@@ -11,8 +11,8 @@ class Pet extends Model
     protected $fillable = [
         'name',
         'species',
-        'birth-date',
-        'death-date',
+        'birth_date',
+        'death_date',
         'note',
     ];
 }
