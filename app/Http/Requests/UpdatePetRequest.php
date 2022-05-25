@@ -27,7 +27,7 @@ class UpdatePetRequest extends FormRequest
             'name'=>'sometimes|required',
             'species'=>'sometimes|required',
             'birth_date'=>'sometimes|required|date',
-            'death_date'=>'sometimes|date',
+            'death_date'=>'nullable|date',
             'note'=>'sometimes',
         ];
     }
